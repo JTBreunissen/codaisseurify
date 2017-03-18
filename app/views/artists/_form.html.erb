@@ -1,0 +1,40 @@
+<%= form_for @artist, html: { multipart: true } do |f| %>
+
+  <% @artist.errors.full_messages.each do |error| %>
+    <p class="alert alert-danger" role="alert"><%= error %></p>
+  <% end %>
+
+  <div class="form-group">
+    <label>Artist Name</label>
+    <%= f.text_field :artistname, placeholder: "Your band name", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+   <label>Origin</label>
+   <%= f.text_field :origin, placeholder: "City/ country of origin", class: "form-control" %>
+ </div>
+
+ <div class="form-group">
+    <label>Bands' website</label>
+    <%= f.text_field :website, placeholder: "https://yourbandwebsite.com/here", class: "form-control" %>
+  </div>
+  <hr>
+  <label>Is the band still active?</label>
+  <div class="form-group">
+    <%= f.check_box :active %> Active
+  </div>
+  <hr>
+  <label>Photo</label>
+
+  <div class="form-group">
+    <span class="btn btn-default">
+      Upload Photo
+      <%= file_field_tag "images[]", type: :file, multiple: false %>
+    </span>
+  </div>
+  <hr>
+
+ <div class="actions">
+   <%= f.submit "Save", class: "btn btn-primary" %>
+ </div>
+<% end %>

@@ -1,0 +1,25 @@
+<div class="panel panel-primary">
+  <div class="panel-heading"><h3><%= "Artist details: #{@artist.artistname}" %></div></h3>
+
+    <div class="panel-body">
+      <h4>Name: </h4>
+      <p><%= @artist.artistname %></p>
+      <h4>Origin: </h4>
+      <p><%= @artist.origin %></p>
+      <hr>
+      <h4>Songs by this artist</h4>
+      <% @artist.songs.each do |song| %>
+      <ul class= "songlist">
+        <li><p><%= "#{song.songtitle}" %></p></li>
+      </ul>
+      <% end %>
+      <hr>
+      <h4>Find out more</h4>
+      <%= link_to "Website", @artist.website, class: "btn btn-home"  %>
+      <hr>
+      <h4>Status</h4>
+      <%= !@artist.active ? "No longer active" : "Currently active" %>
+
+    </div>
+  </div>
+</div>
