@@ -1,25 +1,38 @@
+<% if flash[:notice] -%>
+  <div class = "alert alert-success"><%= flash[:notice] %></div>
+<% end %>
+
 <div class="panel panel-primary">
   <div class="panel-heading"><h3><%= "Artist details: #{@artist.artistname}" %></div></h3>
 
     <div class="panel-body">
+      <%= image_tag(@artist.photo.image) %>
       <h4>Name: </h4>
       <p><%= @artist.artistname %></p>
       <h4>Origin: </h4>
       <p><%= @artist.origin %></p>
+      <p align="right"><%= link_to "Back to artists", artists_path, class: "btn btn-primary" %></p>
       <hr>
       <h4>Songs by this artist</h4>
       <% @artist.songs.each do |song| %>
       <ul class= "songlist">
-        <li><p><%= "#{song.songtitle}" %></p></li>
+        <li><p><%= link_to song.songtitle, song %></p></li>
       </ul>
       <% end %>
+      <p align="right"><%= link_to "Add new song", new_song_path(@artist.artistname), class: "btn btn-primary" %></p>
       <hr>
       <h4>Find out more</h4>
       <%= link_to "Website", @artist.website, class: "btn btn-home"  %>
       <hr>
       <h4>Status</h4>
-      <%= !@artist.active ? "No longer active" : "Currently active" %>
-
+      <%= !@artist.active ? "No longer performing" : "Currently performing" %>
+      <p align="right"><%= link_to "Delete", artist_path(@artist), :method => :delete, class: "btn btn-primary"%></p>
     </div>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="panel-body">
+  <%= link_to "Back to artists", artists_path, class: "btn btn-primary" %>
   </div>
 </div>

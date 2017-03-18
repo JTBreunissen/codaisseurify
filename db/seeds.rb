@@ -1,5 +1,6 @@
-Artist.delete_all
+Photo.delete_all
 Song.delete_all
+Artist.delete_all
 
 artist1 = Artist.create ({
   artistname: Faker::RockBand.name,
@@ -34,6 +35,31 @@ artist5 = Artist.create ({
   origin: Faker::Address.city,
   website: Faker::Internet.url,
   active: Faker::Boolean.boolean,
+  })
+
+photo1 = Photo.create ({
+  artist: artist1,
+  remote_image_url: Faker::LoremPixel.image("150x150"),
+  })
+
+photo2 = Photo.create ({
+  artist: artist2,
+  remote_image_url: Faker::LoremPixel.image("150x150"),
+  })
+
+photo3 = Photo.create ({
+  artist: artist3,
+  remote_image_url: Faker::LoremPixel.image("150x150"),
+  })
+
+photo4 = Photo.create ({
+  artist: artist4,
+  remote_image_url: Faker::LoremPixel.image("150x150"),
+  })
+
+photo5 = Photo.create ({
+  artist: artist5,
+  remote_image_url: Faker::LoremPixel.image("150x150"),
   })
 
 song1 = Song.create ({

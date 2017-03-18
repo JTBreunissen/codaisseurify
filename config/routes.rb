@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  root to: 'pages#home'
+  root to: 'artists#index'
 
   resources :songs
   resources :artists
+  resources :photos
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

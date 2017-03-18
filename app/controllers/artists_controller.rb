@@ -19,10 +19,16 @@ class ArtistsController < ApplicationController
         @artist.photos.create(image: image)
       end
 
-      redirect_to edit_event_path(@artist), notice: "Artist successfully created"
+      redirect_to edit_event_path(@artist), :notice => "Artist successfully created"
     else
       render :new
     end
+  end
+
+  def destroy
+    @artist = Artist.find(params[:id])
+    @artist.destroy
+    redirect_to artists_path, :notice => "The artist and songs belonging to this artist have been deleted"
   end
 
   private

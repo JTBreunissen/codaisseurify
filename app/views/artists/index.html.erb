@@ -2,13 +2,14 @@
   <div class="col-md-9">
     <div class="panel panel-primary">
       <div class="panel-heading">
-        All artists
+        <h4>All artists</h4> <p align="right"> <%= link_to "Add new artist", new_artist_path, class: "btn btn-primary" %></p>
       </div>
       <div class="panel-body">
 
         <% @artist.each do |artist| %>
         <div class="row">
           <div class="col-md-7">
+            <%= image_tag(artist.photo.image) %>
             <h4><%= link_to artist.artistname, artist %></h4>
           </div>
         </div>
@@ -17,6 +18,6 @@
       </div>
     </div>
 
-  <%= link_to "Add new artist", new_artist_path, class: "btn btn-primary" %>
+
   </div>
 </div>
