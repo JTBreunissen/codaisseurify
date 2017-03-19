@@ -1,2 +1,42 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.navbar {
+  margin-left:auto;
+  margin-right:0;
+  height: 60px;
+  background-color: #84bd00;
+}
+
+.panel-footer {
+  position:relative;
+  float:right;
+}
+
+.artistcard {
+  display: inline-block;
+
+}
+
+.panel-body {
+  text-align: justify;
+}
+.panel-heading {
+    color: #fff;
+    background-color: #84bd00;
+    border-color: #337ab7;
+}
+
+.wrapper {
+  max-width: 940px;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+body {
+  background-color: #ecebe8;
+}
+
+.panel {
+  background-color:  #ecebe8;
+}
