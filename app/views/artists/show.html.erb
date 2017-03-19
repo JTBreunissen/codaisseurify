@@ -1,5 +1,6 @@
 <div class="panel panel-primary">
-  <div class="panel-heading"><h3><%= "Artist details: #{@artist.artistname}" %></div></h3>
+  <div class="panel-heading"><h3><%= "Artist details: #{@artist.artistname}" %></h3>
+  <p align="right"><%= link_to "Back to artists", artists_path, class: "btn btn-primary" %></p></div>
 
     <div class="panel-body">
       <%= image_tag(@artist.photo.image) %>
@@ -7,7 +8,6 @@
       <p><%= @artist.artistname %></p>
       <h4>Origin: </h4>
       <p><%= @artist.origin %></p>
-      <p align="right"><%= link_to "Back to artists", artists_path, class: "btn btn-primary" %></p>
       <hr>
       <h4>Songs by this artist</h4>
       <% @artist.songs.each do |song| %>
