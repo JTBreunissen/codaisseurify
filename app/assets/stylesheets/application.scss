@@ -21,10 +21,23 @@
 .panel-body {
   text-align: justify;
 }
-.panel-heading {
-    color: #fff;
-    background-color: #84bd00;
-    border-color: #337ab7;
+
+.panel-primary > .panel-heading {
+  color: #f5f5f5;
+  background-color: #84bd00;
+  border-color: #84bd00;
+  color: black;
+}
+
+.panel-primary {
+  border-color: #84bd00;
+  color: black;
+}
+
+.btn {
+  background-color: #eaf2e8;
+  color: black;
+  border-color: #84bd00;
 }
 
 .wrapper {
