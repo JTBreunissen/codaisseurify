@@ -6,6 +6,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="sticky-footer.css" rel="stylesheet">
   </head>
 
   <body>
@@ -20,8 +22,15 @@
   <div class="container">
     <% if flash[:notice] %>
       <div class="alert alert-info"><%= flash[:notice] %></div>
+  </div>
     <% end %>
     <%= yield %>
   </div>
+
 </body>
+<footer class="footer">
+  <div class="container">
+    <span class="text-muted">Codaisseurify - Your Artists, Your Songs</span>
+  </div>
+</footer>
 </html>

@@ -1,22 +1,24 @@
-<div class="row">
-  <div class="col-md-9">
-    <div class="panel panel-primary wrapper">
-      <div class="panel-heading">
-        <h3>All artists</h3>
-        <p align="right"> <%= link_to "Add new artist", new_artist_path, class: "btn btn-primary" %></p>
-      </div>
-      <div class="panel-body">
-        <%= sort_link("name", "Sort by name") %><br>
-        <%= sort_link("created_at", "Sort by creation time") %>
-        <% @artists.each do |artist| %>
-        <div class="row">
-          <div class="col-md-3 artistcard">
-            <%= image_tag(artist.photo.image) %>
-            <h4><%= link_to artist.artistname, artist, class: "btn btn-primary"%></h4>
-            <% end %>
-          </div>
-        </div>
+<div class="col-md-9">
+  <div class="panel panel-primary wrapper">
+    <div class="panel-heading">
+      <h3>All artists</h3>
+      <!--<p align="right"> <%= link_to "Add new artist", new_artist_path, class: "btn btn-primary" %></p>-->
+    </div>
+    <div class="panel-body">
+      <div class="sort-links">
+      <%= sort_link("name", "Sort by name") %><br>
+      <%= sort_link("created_at", "Sort by creation time") %>
       </div>
     </div>
+      <div class="row">
+            <% @artists.each do |artist| %>
+        <div class="row-index">
+          <div class="col-sm-6 artist-wrapper">
+            <div class="artist-image"><%= image_tag(artist.photo.image) %></div>
+            <div class="caption-artist"><h3><%= link_to artist.artistname, artist%></h3></div>
+          </div>
+        </div>
+        <% end %>
+      </div>
   </div>
 </div>

@@ -18,10 +18,7 @@ class ArtistsController < ApplicationController
     @artist = Artist.new(artist_params)
 
     if @artist.save
-      image_params.each do |image|
-        @artist.photo.create(image: image)
-      end
-
+      @artist.photo.create(remote_image_url: image)
       redirect_to artist_path(@artist), :notice => "Artist successfully created"
     else
       render :new
