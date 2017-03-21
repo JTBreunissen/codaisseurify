@@ -15,13 +15,16 @@
         <li><p><%= link_to song.songtitle, song %></p></li>
       </ul>
       <% end %>
-      <p align="right"><%= link_to "Add new song", new_song_path(@artist.artistname), class: "btn btn-primary" %></p>
+      <hr>
+      <h4>Add new song</h4>
+      <%= render 'songs/form' %>
       <hr>
       <h4>Find out more</h4>
       <%= link_to "Website", @artist.website, class: "btn btn-home"  %>
       <hr>
       <h4>Status</h4>
       <%= !@artist.active ? "No longer performing" : "Currently performing" %>
-      <p align="right"><%= link_to "Delete", artist_path(@artist), :method => :delete, class: "btn btn-primary"%></p>
+      <p align="right"><%= link_to "Delete artist", artist_path(@artist), :method => :delete, class: "btn btn-primary"%></p>
     </div>
   </div>
+</div>
