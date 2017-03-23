@@ -10,9 +10,9 @@ class SongsController < ApplicationController
       @song.artist_id = params[:artist_id]
 
     if @song.save
-      redirect_to @artist, notice: "Song successfully created"
+      redirect_to @artist, :notice => "Song successfully created"
     else
-      render :new
+      redirect_to @artist, :alert => "Please fill in all required fields"
     end
   end
 
